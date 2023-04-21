@@ -13,4 +13,11 @@ createApp({
         this.emailArray.push(result.data.response)
       })
     },
+
+    getArray(){
+      for(let i = 0; i < 10; i++){
+        this.getEmail()
+      }
+    }
+  }
 }).mount("#app")
