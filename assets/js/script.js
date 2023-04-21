@@ -3,14 +3,17 @@ const {createApp} = Vue;
 createApp({
   data(){
     return{
-      emailArray: []
+      emailArray: [],
+      loading: false
     }
   },
 
   methods:{
     getEmail(){
+      this.loading = true;
       axios.get("https://flynn.boolean.careers/exercises/api/random/mail").then(result => {
         this.emailArray.push(result.data.response)
+        this.loading = false;
       })
     },
 

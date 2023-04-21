@@ -15,7 +15,9 @@
       <div class="pg-content d-flex flex-column align-items-center justify-content-center">
         <button type="button" class="btn btn-outline-primary border-2 fs-4" @click="getArray">Genera le email</button>
 
-        <ul class="p-3 mt-3 rounded-2 bg-light-subtle" v-show="emailArray.length > 0">
+        <div class="lds-dual-ring" v-if="loading"></div>
+
+        <ul class="p-3 mt-3 rounded-2 bg-light-subtle" v-else v-show="emailArray.length > 0">
           <li v-for="email in emailArray">{{email}}</li>
         </ul>
       </div>
