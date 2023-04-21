@@ -4,7 +4,7 @@ createApp({
   data(){
     return{
       emailArray: []
-    }    
+    }
   },
 
   methods:{
@@ -15,8 +15,15 @@ createApp({
     },
 
     getArray(){
-      for(let i = 0; i < 10; i++){
+      if (this.emailArray.length === 0){
+        for(let i = 0; i < 10; i++){
         this.getEmail()
+        }
+      }else{
+        this.emailArray = [];
+        for(let i = 0; i < 10; i++){
+          this.getEmail()
+        }
       }
     }
   }
