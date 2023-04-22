@@ -17,8 +17,8 @@
 
         <div class="lds-dual-ring" v-if="loading"></div>
 
-        <ul class="p-3 mt-3 rounded-2 bg-light-subtle" v-else v-show="emailArray.length > 0">
-          <li v-for="email in emailArray">{{email}}</li>
+        <ul class="py-3 mt-3 rounded-2 bg-primary" v-else v-show="emailArray.length > 0">
+          <li v-for="email in emailArray" class="px-3 text-white">{{email}}</li>
         </ul>
       </div>
     </div>
