@@ -15,9 +15,11 @@
       <div class="pg-content d-flex flex-column align-items-center justify-content-center">
         <button type="button" class="btn btn-outline-primary border-2 fs-4" @click="getArray">Genera le email</button>
 
-        <div class="lds-dual-ring" v-if="loading"></div>
+        <input type="text" class="input-group-text mt-3" v-model.trim="limit" placeholder="Inserisci il numero di email da inserire">
 
-        <ul class="py-3 mt-3 rounded-2 bg-primary" v-else v-show="emailArray.length > 0">
+        <div class="lds-dual-ring" v-if="emailArray.length < limit" v-show="emailArray.length > 0"></div>
+
+        <ul class="pg-email-container py-3 mt-3 rounded-2 bg-primary overflow-scroll" v-else>
           <li v-for="email in emailArray" class="px-3 text-white">{{email}}</li>
         </ul>
       </div>
